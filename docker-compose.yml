@@ -9,6 +9,9 @@ services:
     container_name: "talking_text"
     environment:
       OPENAI_API_KEY: ${OPENAI_API_KEY}
+    command: python -m web_interface.app
+    ports:
+      - "5000:5000"
     volumes:
         - .:/talking_text
     deploy:

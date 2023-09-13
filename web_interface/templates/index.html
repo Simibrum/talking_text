@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Langchain Query Interface</title>
+</head>
+<body>
+
+<h1>Langchain Query</h1>
+
+<form method="post">
+    <label for="query">Enter your query:</label>
+    <input type="text" id="query" name="query">
+    <input type="submit" value="Submit">
+</form>
+
+{% if answer_and_documents %}
+    <h2>Result</h2>
+    <p>{{ answer_and_documents.result }}</p>
+
+    <h2>Source Documents</h2>
+    <ul>
+        {% for doc in answer_and_documents.source_documents %}
+            <li>{{ doc.page_content }} (Source: {{ doc.metadata.source }}, Row: {{ doc.metadata.row }})</li>
+        {% endfor %}
+    </ul>
+{% endif %}
+
+</body>
+</html>

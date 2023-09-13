@@ -1,0 +1,6 @@
+# Python requirements - stuff that takes a long time to do this so Docker can cache
+langchain
+tiktoken
+openai
+
+flask
