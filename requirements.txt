@@ -1,0 +1,6 @@
+# Python requirements
+langchain
+sentence_transformers
+faiss-gpu
+tiktoken
+openai

@@ -1,0 +1,18 @@
+# Docker compose file
+version: '3.8'
+
+services:
+  main:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: "talking_text"
+    environment:
+      OPENAI_API_KEY: ${OPENAI_API_KEY}
+    volumes:
+        - .:/talking_text
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - capabilities: [ gpu ]
