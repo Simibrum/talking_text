@@ -22,14 +22,8 @@ pip install -r requirements_quick.txt
 ```
 The requirements are split across two files to help the caching of the big pytorch download.
 
-### Screenshot
-![Example of web interface](docs/Example%20of%20web%20interface.png)
-
-### Example Video
-<video width="320" height="200" controls>
-    <source src="docs/Example%20of%20web%20interface.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-</video>
+### Example
+![Example of web interface](docs/example.gif)
 
 ## How it Works?
 
