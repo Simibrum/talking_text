@@ -11,6 +11,7 @@ from langchain.chains import RetrievalQA
 from langchain.callbacks import StdOutCallbackHandler
 
 # Create a logger
+logging.basicConfig(level=logging.DEBUG, filename='app.log', filemode='w')
 logger = logging.getLogger(__name__)
 
 # Create a local file store to cache the embeddings

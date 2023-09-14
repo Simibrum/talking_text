@@ -8,6 +8,9 @@ from langchain.llms.openai import OpenAIChat
 from langchain.chains import RetrievalQA
 from langchain.callbacks import StdOutCallbackHandler
 
+# Configure logging
+logging.basicConfig(level=logging.DEBUG, filename='app.log', filemode='w')
+
 class LangchainInterface:
     def __init__(self, bible_csv_path: str = 'nheb_bible.csv'):
         # Initialize logging
