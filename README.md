@@ -1,5 +1,7 @@
 # talking_text
-Playing with Langchain as applied to a datasource consisting of religious text passages.
+The aim of the project is to provide an educational tool that allows questions to be asked of religious texts.
+
+The project seeks to apply functions from the langchain library.
 
 ## Usage
 
@@ -55,3 +57,13 @@ This project is a Question-Answering (QA) system that leverages the Langchain li
 
 5. **Styling**: 
    - The web interface is styled using Bootstrap and custom CSS for better user experience.
+
+# Sources
+
+Bible passages are from the New Heart English Bible (NHEB), which can be found here - https://nheb.net/
+
+Quran passages are from the Quran JSON project collated by Risan Bagja Pradana - https://github.com/risan/quran-json
+
+## Quran Preprocessing
+
+The Quran JSON file is ordered by chapters and verses.

@@ -14,8 +14,12 @@ services:
       - "5000:5000"
     volumes:
         - .:/talking_text
+        - model_data:/root/.cache/torch/sentence_transformers/
     deploy:
       resources:
         reservations:
           devices:
             - capabilities: [ gpu ]
+
+volumes:
+    model_data:

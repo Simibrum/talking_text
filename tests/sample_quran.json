@@ -1,0 +1,22 @@
+[
+    {
+        "chapter_id": 1,
+        "chapter_name": "الفاتحة",
+        "chapter_transliteration": "Al-Fatihah",
+        "chapter_translation": "The Opener",
+        "chapter_type": "meccan",
+        "verse_id": 1,
+        "arabic_text": "بِسۡمِ ٱللَّهِ ٱلرَّحۡمَٰنِ ٱلرَّحِيمِ",
+        "english_translation": "In the name of Allah, the Entirely Merciful, the Especially Merciful"
+    },
+    {
+        "chapter_id": 1,
+        "chapter_name": "الفاتحة",
+        "chapter_transliteration": "Al-Fatihah",
+        "chapter_translation": "The Opener",
+        "chapter_type": "meccan",
+        "verse_id": 2,
+        "arabic_text": "ٱلۡحَمۡدُ لِلَّهِ رَبِّ ٱلۡعَٰلَمِينَ",
+        "english_translation": "[All] praise is [due] to Allah, Lord of the worlds"
+    }
+]
