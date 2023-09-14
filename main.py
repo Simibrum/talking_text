@@ -37,7 +37,7 @@ logger.info("Creating cache backed embeddings")
 embedder = CacheBackedEmbeddings.from_bytes_store(
     core_embedding_model,
     store,
-    namespace=core_embedding_model.model_name
+    namespace=core_embedding_model.model
 )
 
 # Store embeddings in vector store

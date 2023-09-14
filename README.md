@@ -61,4 +61,20 @@ This project is a Question-Answering (QA) system that leverages the Langchain li
 This project can be run on PythonAnywhere. The steps are as follows:
 
 1. Create a new PythonAnywhere account / login to existing account.
-2. Spin up a new 
+2. Spin up a new bash console.
+3. Clone the repository. (Setup SSH keys if needed.)
+```bash
+git clone git@github.com:Simibrum/talking_text.git
+```
+4. Create a new virtual environment and install the requirements.
+```bash
+mkvirtualenv .venv --python=/usr/bin/python3.10
+pip install -r requirements.txt
+```
+5. Add the OpenAI API key to the environment variables.
+```bash
+nano ~/.virtualenvs/.venv/bin/activate
+export OPENAPI_KEY=[your_openapi_key_here]
+deactivate
+workon .venv
+```

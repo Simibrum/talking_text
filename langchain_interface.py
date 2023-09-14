@@ -36,7 +36,7 @@ class LangchainInterface:
         self.embedder = CacheBackedEmbeddings.from_bytes_store(
             self.core_embedding_model,
             self.store,
-            namespace=self.core_embedding_model.model_name
+            namespace=self.core_embedding_model.model
         )
 
         # Store embeddings in vector store
