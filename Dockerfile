@@ -36,14 +36,10 @@ RUN pip3 --version
 RUN pip3 install -U pip setuptools wheel
 
 # Copy over requirements and install first to cache if we only have code change
-COPY requirements_slow.txt talking_text/requirements_slow.txt
-COPY requirements_quick.txt talking_text/requirements_quick.txt
-
-# Install pip dependencies for slow stuff
-RUN cd talking_text && pip3 install --no-cache-dir -r requirements_slow.txt
+COPY requirements.txt talking_text/requirements.txt
 
 # Install pip dependencies for quick stuff
-RUN cd talking_text && pip3 install --no-cache-dir -r requirements_quick.txt
+RUN cd talking_text && pip3 install --no-cache-dir -r requirements.txt
 
 # Install other files
 COPY . talking_text

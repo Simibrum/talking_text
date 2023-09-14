@@ -18,7 +18,7 @@ Create a virtual environment and install the requirements.
 python3 -m venv venv
 source venv/bin/activate
 pip install -r requirements_slow.txt
-pip install -r requirements_quick.txt
+pip install -r requirements.txt
 ```
 The requirements are split across two files to help the caching of the big pytorch download.
 
@@ -55,3 +55,10 @@ This project is a Question-Answering (QA) system that leverages the Langchain li
 
 5. **Styling**: 
    - The web interface is styled using Bootstrap and custom CSS for better user experience.
+
+## Running on PythonAnywhere
+
+This project can be run on PythonAnywhere. The steps are as follows:
+
+1. Create a new PythonAnywhere account / login to existing account.
+2. Spin up a new 

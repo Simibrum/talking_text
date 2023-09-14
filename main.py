@@ -1,7 +1,7 @@
 import logging
 
 from langchain.document_loaders.csv_loader import CSVLoader
-from langchain.embeddings import HuggingFaceEmbeddings
+from langchain.embeddings.openai import OpenAIEmbeddings
 from langchain.vectorstores import FAISS
 from langchain.embeddings import CacheBackedEmbeddings
 from langchain.storage import LocalFileStore
@@ -19,7 +19,7 @@ store = LocalFileStore("./cache/")
 
 # Initialize the embeddings
 logger.info("Initializing embeddings")
-core_embedding_model = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
+core_embedding_model = OpenAIEmbeddings()
 
 # Load the text data from a CSV file
 logger.info("Loading data")
