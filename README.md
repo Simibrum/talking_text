@@ -26,12 +26,14 @@ The requirements are split across two files to help the caching of the big pytor
 
 ### Example
 ![Example of web interface](docs/example.gif)
+![Example of Quran](docs/quran.gif)
 
 ## How it Works?
 
 ### Overview
 
-This project is a Question-Answering (QA) system that leverages the Langchain library and a Flask web interface. Users can ask questions related to Bible passages, and the system will provide relevant answers and source documents.
+This project is a Question-Answering (QA) system that leverages the Langchain library and a Flask web interface. 
+Users can ask questions related to Bible and Quran passages, and the system will provide relevant answers and source documents.
 
 ### Components
 
@@ -41,7 +43,7 @@ This project is a Question-Answering (QA) system that leverages the Langchain li
 ### Flow
 
 1. **Initialization**: 
-   - The Langchain library initializes models and loads the New Heart English Bible (NHEB) dataset from a CSV file.
+   - The Langchain library initializes models and loads the New Heart English Bible (NHEB) dataset from a CSV file and the Quran from a preprocessed JSON file.
    - Text embeddings are stored in a FAISS vector store.
   
 2. **User Interaction**:
@@ -49,7 +51,7 @@ This project is a Question-Answering (QA) system that leverages the Langchain li
   
 3. **Query Processing**: 
    - The Flask app sends the user's question to Langchain.
-   - Langchain uses the vector store to retrieve relevant Bible passages and the OpenAI model to generate an answer.
+   - Langchain uses the vector store to retrieve relevant Bible/Quran passages and the OpenAI model to generate an answer.
   
 4. **Display Results**: 
    - The answer and source documents are displayed on the web interface.
@@ -57,6 +59,7 @@ This project is a Question-Answering (QA) system that leverages the Langchain li
 
 5. **Styling**: 
    - The web interface is styled using Bootstrap and custom CSS for better user experience.
+   - The Google Noto Arabic font is used to display the Quranic Arabic text.
 
 # Sources
 
@@ -66,4 +69,5 @@ Quran passages are from the Quran JSON project collated by Risan Bagja Pradana -
 
 ## Quran Preprocessing
 
-The Quran JSON file is ordered by chapters and verses.
+The Quran JSON file is ordered by chapters and verses. 
+I have flattened this structure to provide a set of verses with chapter information.
