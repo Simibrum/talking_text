@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+            crossorigin="anonymous"></script>
+    <title>Ask the Quran</title>
+    <style>
+        blockquote {
+            font-family: 'Noto Sans Arabic', sans-serif;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+</head>
+<body>
+<div class="container mt-5">
+    <h1 class="mb-4">Ask the Quran</h1>
+
+    <form method="post">
+        <div class="input-group mb-3">
+            <input
+                    type="text"
+                    id="query"
+                    name="query"
+                    class="form-control form-control-lg"
+                    placeholder="Ask your question here..."
+                    aria-label="Ask your question here..."
+                    aria-describedby="button-addon2">
+            <button class="btn btn-outline-secondary" type="submit" id="button-addon2">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+    </form>
+
+    <hr>
+
+    {% if answer_and_documents %}
+    <div class="mt-5">
+        <h2 class="mt-2">You asked...</h2>
+        <p class="lead mt-3 pl-3">{{ answer_and_documents.query }}</p>
+    </div>
+    <hr>
+    <div class="mt-5">
+        <h2 class="mt-2">The Quran answers...</h2>
+        <p class="lead mt-3 pl-3">{{ answer_and_documents.result }}</p>
+    </div>
+    <hr>
+    <div class="mt-5">
+        {% for doc in answer_and_documents.source_documents %}
+        <figure>
+            <blockquote class="blockquote">
+                <p class="mb-0">{{ doc.metadata.arabic_text }}</p>
+            </blockquote>
+            <figcaption class="blockquote-footer">
+                <cite title="{{ doc.metadata.chapter_name }}">
+                    Chapter: {{ doc.metadata.chapter_translation }}
+                    ({{ doc.metadata.chapter_transliteration }}),
+                    Verse: {{ doc.metadata.verse_id }}
+                </cite>
+            </figcaption>
+            <p class="mt-2">
+                <strong>English Translation:</strong> {{ doc.page_content }}
+            </p>
+        </figure>
+
+        {% endfor %}
+    </div>
+    {% endif %}
+</div>
+
+</body>
+</html>

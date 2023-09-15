@@ -1,6 +1,6 @@
 import logging
 
-from langchain.document_loaders.csv_loader import CSVLoader
+from langchain.document_loaders import JSONLoader
 from langchain.embeddings import HuggingFaceEmbeddings
 from langchain.vectorstores import FAISS
 from langchain.embeddings import CacheBackedEmbeddings
@@ -9,13 +9,14 @@ from langchain.storage import LocalFileStore
 from langchain.llms.openai import OpenAIChat
 from langchain.chains import RetrievalQA
 from langchain.callbacks import StdOutCallbackHandler
+from data_sources import populate_metadata
 
 # Create a logger
 logger = logging.getLogger(__name__)
 
 # Create a local file store to cache the embeddings
 logger.info("Creating local file store")
-store = LocalFileStore("./cache/")
+store = LocalFileStore("../cache/")
 
 # Initialize the embeddings
 logger.info("Initializing embeddings")
@@ -23,11 +24,11 @@ core_embedding_model = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
 
 # Load the text data from a CSV file
 logger.info("Loading data")
-loader = CSVLoader(
-    file_path="nheb_bible.csv",
-    csv_args={
-        "delimiter": ",",
-    }
+loader = JSONLoader(
+    file_path='../data/flattened_quran_verses.json',
+    jq_schema='.[]',
+    content_key="english_translation",
+    metadata_func=populate_metadata
 )
 
 data = loader.load()
