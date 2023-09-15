@@ -20,6 +20,11 @@ def parse_document(page_content):
     return parsed
 
 
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+
 @app.route('/bible', methods=['GET', 'POST'])
 def ask_bible():
     if request.method == 'POST':
